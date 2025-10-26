@@ -1,3 +1,241 @@
+:root {
+    --primer-color: #3498db;
+    --segundo-color: #2ecc71;
+    --tercer-color: #e74c3c;
+}
+
+
+/* ==========================
+   HEADER + CARRITO DESPUÉS DE CONTACTO
+========================== */
+
+/* ====== ESTILOS DEL LOGO ====== */
+.logo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.brand-logo {
+  height: 70px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.site-subtitle {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #e3f5ff;
+  letter-spacing: 1px;
+}
+
+
+header {
+  background: linear-gradient(90deg, #004b8d, #007bff);
+  color: white;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* LOGO Y TÍTULO */
+.logo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.site-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+/* MENÚ */
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.menu a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffd700;
+}
+
+/* SUBMENÚ */
+.submenu-items {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  padding: 0;
+}
+
+.submenu:hover .submenu-items {
+  display: block;
+}
+
+.submenu-items li a {
+  color: #004b8d;
+  padding: 10px 16px;
+  display: block;
+  transition: all 0.3s;
+}
+
+.submenu-items li a:hover {
+  background: #eaf3ff;
+  color: #007bff;
+  padding-left: 22px;
+}
+
+/* CARRITO */
+.carrito a {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+#cart-count {
+  background: #ff5252;
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 50%;
+  padding: 3px 7px;
+  position: absolute;
+  top: -8px;
+  right: -10px;
+}
+
+/* PANEL LATERAL DEL CARRITO */
+#carrito-panel {
+  position: fixed;
+  right: -400px;
+  top: 0;
+  width: 350px;
+  height: 100%;
+  background: white;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+  transition: right 0.4s ease;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+}
+
+#carrito-panel.activo {
+  right: 0;
+}
+
+.carrito-header {
+  background: #004b8d;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.carrito-header h3 {
+  margin: 0;
+}
+
+#cerrar-carrito {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.carrito-contenido {
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+  color: #333;
+}
+
+@media (max-width: 900px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .site-title {
+    font-size: 1.4rem;
+  }
+}
+
+
+
+
+
 /* Estilos generales */
 * {
     margin: 0;
@@ -12,6 +250,43 @@ body {
 }
 
 /* Encabezado */
+
+.titulo-principal {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.2rem;
+  text-align: center;
+  margin: 50px auto;
+  color: #1b263b;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #e63946, #f1faee, #457b9d, #9c0ed4);
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+-webkit-text-fill-color: transparent;
+  animation: brillo 6s linear infinite;
+}
+
+.titulo-principal .resaltado {
+  font-weight: 700;
+  color: var(--primer-color);
+  -webkit-text-fill-color: var(--primer-color);
+}
+
+.titulo-principal .diversion {
+  font-style: italic;
+  color: var(--tercer-color);
+  -webkit-text-fill-color: var(--tercer-color);
+}
+
+@keyframes brillo {
+  0% { filter: brightness(100%); }
+  50% { filter: brightness(120%); }
+  100% { filter: brightness(100%); }
+}
+
+
+
 header {
     background-color: #003366;
     color: white;
@@ -364,7 +639,7 @@ header, .hero, .precios, footer, body {
     backface-visibility: hidden;
     border-radius: 10px;
     display: flex;
-    flex-direction: column;
+    
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -630,3 +905,194 @@ a.boton {
         margin: 8px 0;
     }
 }
+
+
+
+/* === ESTILOS NUEVOS PARA LOS 3 PLANES TURÍSTICOS === */
+.grid-horario {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === TARJETAS DE PLANES === */
+.grid-horario .card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  width: 320px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ÍCONO DECORATIVO SUPERIOR */
+.grid-horario .card::before {
+  content: "🏙️";
+  font-size: 2rem;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  opacity: 0.2;
+}
+
+/* EFECTO HOVER */
+.grid-horario .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* === TÍTULOS Y TEXTOS === */
+.grid-horario .card h3 {
+  text-align: center;
+  color: #0056a6;
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.grid-horario .card p {
+  text-align: justify;
+  line-height: 1.5;
+  color: #333;
+  font-size: 1em;
+}
+
+/* ÍCONOS DIFERENTES PARA CADA CARD */
+.card:nth-child(1)::before {
+  content: "🏛️"; /* Museo */
+}
+.card:nth-child(2)::before {
+  content: "🎢"; /* Montaña rusa */
+}
+.card:nth-child(3)::before {
+  content: "⛰️"; /* Monserrate */
+}
+
+/* COLORES DIFERENTES PARA CADA CARD */
+.card:nth-child(1) {
+  border-top: 5px solid #1e90ff;
+  background: linear-gradient(135deg, #eef6ff 0%, #cfe8ff 100%);
+}
+.card:nth-child(2) {
+  border-top: 5px solid #ff6b6b;
+  background: linear-gradient(135deg, #fff0f0 0%, #ffdada 100%);
+}
+.card:nth-child(3) {
+  border-top: 5px solid #00b894;
+  background: linear-gradient(135deg, #e8fff4 0%, #b2ffe2 100%);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .grid-horario {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid-horario .card {
+    width: 90%;
+  }
+}
+
+
+
+
+
+
+
+/* === BOTONES DE RESERVA DE PLANES === */
+.btn-reservar {
+  display: inline-block;
+  background-color: #004b8d;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 25px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-reservar:hover {
+  background-color: #007bff;
+  transform: translateY(-2px);
+}
+
+.btn-reservar:active {
+  transform: scale(0.96);
+}
+
+
+
+/* === PANEL DEL CARRITO === */
+.carrito-panel {
+  position: fixed;
+  right: -400px;
+  top: 0;
+  width: 350px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+  padding: 20px;
+  transition: right 0.4s ease;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.carrito-panel.activo {
+  right: 0;
+}
+
+.carrito-panel h2 {
+  text-align: center;
+  color: #004b8d;
+  margin-bottom: 15px;
+}
+
+.carrito-panel ul {
+  list-style: none;
+  padding: 0;
+}
+
+.carrito-panel li {
+  background: #f3f3f3;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carrito-panel button {
+  background-color: #004b8d;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.carrito-panel button:hover {
+  background-color: #007bff;
+}
+
+/* Total y botón vaciar */
+#total {
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: cente;
+}
+
